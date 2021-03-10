@@ -6,16 +6,16 @@
     'version': '1.0',
     'category': 'Sales',
     'sequence': 15,
-    'summary': 'Quotations, Sales Orders, Invoicing',
+    'summary': 'Prescriptions, Dispensing Orders, Invoicing',
     'description': """
-Manage sales quotations and orders
+Manage dispensing prescriptions and orders
 ==================================
 
-This application allows you to manage your sales goals in an effective and efficient manner by keeping track of all sales orders and history.
+This application allows you to manage your dispensing goals in an effective and efficient manner by keeping track of all sales orders and history.
 
 It handles the full sales workflow:
 
-* **Quotation** -> **Sales order** -> **Invoice**
+* **Prescription** -> **Dispensing order** -> **Invoice**
 
 Preferences (only with Warehouse Management installed)
 ------------------------------------------------------
@@ -37,7 +37,7 @@ categories, subtotals or page-breaks.
 
 The Dashboard for the Sales Manager will include
 ------------------------------------------------
-* My Quotations
+* My Prescriptions
 * Monthly Turnover (Graph)
     """,
     'website': 'https://www.odoo.com/page/crm',

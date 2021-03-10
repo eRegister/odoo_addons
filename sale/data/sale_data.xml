@@ -3,7 +3,7 @@
     <data noupdate="1">
         <!-- Requests Links -->
         <record id="req_link_sale_order" model="res.request.link">
-            <field name="name">Sales Order</field>
+            <field name="name">Dispensing Order</field>
             <field name="object">sale.order</field>
         </record>
 
