@@ -6,7 +6,7 @@
             This menu item's purpose is to overwrite another one defined in
             the base module in order to set new groups.
         -->
-        <menuitem name="Sales"
+        <menuitem name="Dispensing"
             id="sales_team.menu_base_partner"
             web_icon="sale,static/description/icon.png"/>
 
@@ -128,7 +128,7 @@
             <field name="model">sale.order</field>
             <field name="priority">4</field>
             <field name="arch" type="xml">
-                <tree string="Quotation" class="o_sale_order" decoration-bf="message_needaction==True" decoration-muted="state=='cancel'">
+                <tree string="Prescription" class="o_sale_order" decoration-bf="message_needaction==True" decoration-muted="state=='cancel'">
                     <field name="message_needaction" invisible="1"/>
                     <field name="name" string="Quotation Number"/>
                     <field name="date_order"/>
@@ -508,7 +508,7 @@
 
 
         <record id="action_quotations" model="ir.actions.act_window">
-            <field name="name">Quotations</field>
+            <field name="name">Prescription</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">sale.order</field>
             <field name="view_type">form</field>
@@ -776,7 +776,7 @@
         </record>
 
         <record id="action_quotations_salesteams" model="ir.actions.act_window">
-            <field name="name">Quotations</field>
+            <field name="name">Prescriptions</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">sale.order</field>
             <field name="view_type">form</field>
