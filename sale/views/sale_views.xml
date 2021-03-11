@@ -432,7 +432,7 @@
         </record>
 
         <record id="action_orders" model="ir.actions.act_window">
-            <field name="name">Sales Orders</field>
+            <field name="name">Dispensing Orders</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">sale.order</field>
             <field name="view_type">form</field>
@@ -446,7 +446,7 @@
                 </p><p>
                     Once the Prescription is confirmed, it becomes a dispensing order.
                     You'll be able to invoice it and collect payments.
-                    From the <i>Sales Orders</i> menu, you can track delivery
+                    From the <i>Prescriptions Orders</i> menu, you can track delivery
                     orders or services.
                 </p>
             </field>
@@ -508,7 +508,7 @@
 
 
         <record id="action_quotations" model="ir.actions.act_window">
-            <field name="name">Quotations</field>
+            <field name="name">Prescriptions</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">sale.order</field>
             <field name="view_type">form</field>
@@ -738,7 +738,7 @@
 
         <!-- search by Salesteams -->
         <record id="action_orders_salesteams" model="ir.actions.act_window">
-            <field name="name">Sales Orders</field>
+            <field name="name">Dispensing Orders</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">sale.order</field>
             <field name="view_type">form</field>
@@ -761,7 +761,7 @@
             </field>
         </record>
         <record id="action_orders_to_invoice_salesteams" model="ir.actions.act_window">
-            <field name="name">Sales Orders</field>
+            <field name="name">Dispensing Orders</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">sale.order</field>
             <field name="view_type">form</field>
@@ -776,7 +776,7 @@
         </record>
 
         <record id="action_quotations_salesteams" model="ir.actions.act_window">
-            <field name="name">Quotations</field>
+            <field name="name">Prescriptions</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">sale.order</field>
             <field name="view_type">form</field>
