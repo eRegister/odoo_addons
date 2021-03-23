@@ -117,7 +117,7 @@
                     <field name="user_id" string="Pharmacy Staff"/>
                     <field name="amount_total" sum="Total Tax Included" widget="monetary" invisible="1"/>
                     <field name="currency_id" invisible="1"/>
-                    <field name="invoice_status" string="Dispensing Status"/>
+                    <field name="invoice_status" invisible="1" string="Dispensing Status"/>
                     <field name="state" invisible="1"/>
                 </tree>
             </field>

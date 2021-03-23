@@ -2,7 +2,7 @@
 <odoo>
 
         <!-- Top menu item -->
-        <menuitem name="Purchases"
+        <menuitem name="Requisitions"
             id="menu_purchase_root"
             groups="group_purchase_manager,group_purchase_user"
             web_icon="purchase,static/description/icon.png"
@@ -124,7 +124,7 @@
             <field name="name">purchase.order.pivot</field>
             <field name="model">purchase.order</field>
             <field name="arch" type="xml">
-                <pivot string="Purchase Order" display_quantity="True">
+                <pivot string="Requisition Order" display_quantity="True">
                     <field name="partner_id" type="row"/>
                     <field name="amount_total" type="measure"/>
                 </pivot>
@@ -134,7 +134,7 @@
             <field name="name">purchase.order.graph</field>
             <field name="model">purchase.order</field>
             <field name="arch" type="xml">
-                <graph string="Purchase Order">
+                <graph string="Requisistion Order">
                     <field name="partner_id"/>
                     <field name="amount_total" type="measure"/>
                 </graph>
@@ -153,7 +153,7 @@
             <field name="name">purchase.order.form</field>
             <field name="model">purchase.order</field>
             <field name="arch" type="xml">
-                <form string="Purchase Order">
+                <form string="Requisition Order">
                 <header>
                     <button name="action_rfq_send" states="draft" string="Send RFQ by Email" type="object" context="{'send_rfq':True}" class="oe_highlight"/>
                     <button name="action_rfq_send" states="sent" string="Re-Send RFQ by Email" type="object" context="{'send_rfq':True}"/>
@@ -188,7 +188,7 @@
                     </div>
                     <div class="oe_title">
                         <label string="Request for Quotation " attrs="{'invisible': [('state','not in',('draft','sent'))]}"/>
-                        <label string="Purchase Order " attrs="{'invisible': [('state','in',('draft','sent'))]}"/>
+                        <label string="Requisition Order " attrs="{'invisible': [('state','in',('draft','sent'))]}"/>
                         <h1>
                             <field name="name" readonly="1"/>
                         </h1>
@@ -209,7 +209,7 @@
                     <notebook>
                         <page string="Products">
                             <field name="order_line" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}">
-                                 <tree string="Purchase Order Lines" editable="bottom">
+                                 <tree string="Requisition Order Lines" editable="bottom">
                                     <field name="currency_id" invisible="1"/>
                                     <field name="state" invisible="1"/>
                                     <field name="sequence" widget="handle"/>
@@ -227,7 +227,7 @@
                                     <field name="taxes_id" widget="many2many_tags" domain="[('type_tax_use','=','purchase')]" context="{'default_type_tax_use': 'purchase'}"/>
                                     <field name="price_subtotal" widget="monetary"/>
                                 </tree>
-                                <form string="Purchase Order Line">
+                                <form string="Requisition Order Line">
                                     <sheet>
                                         <group>
                                             <group>
@@ -309,13 +309,13 @@
             <field name="name">request.quotation.select</field>
             <field name="model">purchase.order</field>
             <field name="arch" type="xml">
-                <search string="Search Purchase Order">
+                <search string="Search Requisition Order">
                     <field name="name" string="Reference"/>
                     <field name="partner_id" operator="child_of"/>
                     <field name="product_id"/>
                     <field name="create_uid"/>
                     <filter name="draft" string="Quotations" domain="[('state','in',('draft','sent','to approve'))]"/>
-                    <filter name="approved" string="Purchase Orders" domain="[('state','in',('purchase','done'))]"/>
+                    <filter name="approved" string="Requisistion Orders" domain="[('state','in',('purchase','done'))]"/>
                     <filter name="to_approve" string="To Approve" domain="[('state', '=', 'to approve')]"/>
                     <separator/>
                     <filter name="not_invoiced" string="Waiting Bills" domain="[('invoice_status','=', 'to invoice')]" help="Purchase orders that include lines not invoiced."/>
@@ -375,7 +375,7 @@
             <field name="name">purchase.order.tree</field>
             <field name="model">purchase.order</field>
             <field name="arch" type="xml">
-                <tree decoration-bf="message_unread==True" decoration-muted="state=='cancel'" decoration-info="state in ('wait','confirmed')" string="Purchase Order">
+                <tree decoration-bf="message_unread==True" decoration-muted="state=='cancel'" decoration-info="state in ('wait','confirmed')" string="Requisition Order">
                     <field name="message_unread" invisible="1"/>
                     <field name="name" string="Reference"/>
                     <field name="date_order" />
@@ -393,7 +393,7 @@
         </record>
 
         <record id="purchase_order_action_generic" model="ir.actions.act_window">
-            <field name="name">Purchase Orders</field>
+            <field name="name">Requisition Orders</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">purchase.order</field>
             <field name="domain">[]</field>
@@ -426,7 +426,7 @@
             sequence="0"/>
 
         <record id="purchase_form_action" model="ir.actions.act_window">
-            <field name="name">Purchase Orders</field>
+            <field name="name">Requisition Orders</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">purchase.order</field>
             <field name="view_mode">tree,kanban,form,pivot,graph,calendar</field>
@@ -450,7 +450,7 @@
             <field name="name">purchase.order.line.tree</field>
             <field name="model">purchase.order.line</field>
             <field name="arch" type="xml">
-                <tree string="Purchase Order Lines" create="false">
+                <tree string="Requisition Order Lines" create="false">
                     <field name="order_id"/>
                     <field name="name"/>
                     <field name="partner_id" string="Vendor" />
@@ -469,7 +469,7 @@
             <field name="model">purchase.order.line</field>
             <field name="priority" eval="20"/>
             <field name="arch" type="xml">
-                <form string="Purchase Order Line" create="false">
+                <form string="Requisition Order Line" create="false">
                     <sheet>
                         <label for="order_id" class="oe_edit_only"/>
                         <h1>
@@ -510,7 +510,7 @@
             <field name="name">purchase.order.line.search</field>
             <field name="model">purchase.order.line</field>
             <field name="arch" type="xml">
-                <search string="Search Purchase Order">
+                <search string="Search Requisistion Order">
                     <field name="order_id"/>
                     <field name="product_id"/>
                     <field name="partner_id" string="Vendor" filter_domain="[('partner_id', 'child_of', self)]"/>
@@ -587,7 +587,7 @@
         <record model="ir.actions.act_window" id="action_purchase_line_product_tree">
             <field name="context">{}</field>
             <field name="domain">[('product_id.product_tmpl_id','in',active_ids), ('state', 'in', ['purchase', 'done'])]</field>
-            <field name="name">Purchases</field>
+            <field name="name">Requisitions</field>
             <field name="res_model">purchase.order.line</field>
             <field name="view_id" ref="purchase_order_line_tree"/>
         </record>
@@ -615,7 +615,7 @@
                 <div name="button_box" position="inside">
                    <button class="oe_stat_button" name="%(purchase.action_purchase_line_product_tree)d"
                        type="action" icon="fa-shopping-cart">
-                       <field string="Purchases" name="purchase_count" widget="statinfo"/>
+                       <field string="Requisitions" name="purchase_count" widget="statinfo"/>
                    </button>
                 </div>
             </field>
