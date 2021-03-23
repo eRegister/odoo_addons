@@ -8,7 +8,7 @@
             web_icon="purchase,static/description/icon.png"
             sequence="25"/>
 
-        <menuitem id="menu_procurement_management" name="Purchase"
+        <menuitem id="menu_procurement_management" name="Product Requisition"
             parent="menu_purchase_root" sequence="1" />
 
         <!--Supplier menu-->
@@ -401,7 +401,7 @@
         </record>
 
         <record id="purchase_rfq" model="ir.actions.act_window">
-            <field name="name">Requests for Quotation</field>
+            <field name="name">Request for product(s)</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">purchase.order</field>
             <field name="context">{'search_default_todo':1}</field>
@@ -410,7 +410,7 @@
             <field name="search_view_id" ref="view_purchase_order_filter"/>
             <field name="help" type="html">
               <p class="oe_view_nocontent_create">
-                Click to create a request for quotation.
+                Click to create a request for product.
               </p><p>
                 The quotation contains the history of the discussion/negotiation
                 you had with your vendor. Once confirmed, a request for
