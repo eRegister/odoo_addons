@@ -82,9 +82,9 @@ class ProductTemplate(models.Model):
 
     warranty = fields.Float('Warranty')
     sale_ok = fields.Boolean(
-        'Can be Sold', default=True,
+        'Can be Dispensed', default=True,
         help="Specify if the product can be selected in a sales order line.")
-    purchase_ok = fields.Boolean('Can be Purchased', default=True)
+    purchase_ok = fields.Boolean('Can be Recieved', default=True)
     pricelist_id = fields.Many2one(
         'product.pricelist', 'Pricelist', store=False,
         help='Technical field. Used for searching on pricelists, not stored in database.')
