@@ -127,7 +127,7 @@ class PurchaseOrder(models.Model):
         ('draft', 'RFQ'),
         ('sent', 'RFQ Sent'),
         ('to approve', 'To Approve'),
-        ('purchase', 'Purchase Order'),
+        ('purchase', 'Requisition Order'),
         ('done', 'Locked'),
         ('cancel', 'Cancelled')
         ], string='Status', readonly=True, index=True, copy=False, default='draft', track_visibility='onchange')

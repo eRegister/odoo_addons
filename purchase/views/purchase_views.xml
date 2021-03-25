@@ -214,10 +214,10 @@
                                     <field name="state" invisible="1"/>
                                     <field name="sequence" widget="handle"/>
                                     <field name="product_id" attrs="{'readonly': [('state', 'in', ('purchase', 'to approve','done', 'cancel'))]}" context="{'partner_id':parent.partner_id, 'quantity':product_qty,'uom':product_uom, 'company_id': parent.company_id}"/>
-                                    <field name="name"/>
+                                    <field name="name" string= "Detailed Description"/>
                                     <field name="date_planned"/>
                                     <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}" invisible="1"/>
-                                    <field name="account_analytic_id" context="{'default_partner_id':parent.partner_id}" groups="purchase.group_analytic_accounting"/>
+                                    <field name="account_analytic_id" context="{'default_partner_id':parent.partner_id}" groups="purchase.group_analytic_accounting" invisible="1"/>
                                     <field name="analytic_tag_ids" groups="purchase.group_analytic_accounting" widget="many2many_tags"/>
                                     <field name="product_qty"/>
                                     <field name="qty_received" invisible="not context.get('show_purchase', False)"/>
@@ -387,7 +387,7 @@
                     <field name="amount_total" sum="Total amount" widget="monetary" invisible="1"/>
                     <field name="currency_id" invisible="1"/>
                     <field name="state"/>
-                    <field name="invoice_status" invisible="not context.get('show_purchase', False)"/>
+                    <field name="invoice_status" invisible="1"/>
                 </tree>
             </field>
         </record>
@@ -412,7 +412,7 @@
               <p class="oe_view_nocontent_create">
                 Click to create a request for product.
               </p><p>
-                The quotation contains the history of the discussion/negotiation
+                The Prescription contains the history of the discussion/negotiation
                 you had with your vendor. Once confirmed, a request for
                 quotation is converted into a purchase order.
               </p><p>
