@@ -216,16 +216,16 @@
                                     <field name="product_id" attrs="{'readonly': [('state', 'in', ('purchase', 'to approve','done', 'cancel'))]}" context="{'partner_id':parent.partner_id, 'quantity':product_qty,'uom':product_uom, 'company_id': parent.company_id}"/>
                                     <field name="name"/>
                                     <field name="date_planned"/>
-                                    <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+                                    <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}" invisible="1"/>
                                     <field name="account_analytic_id" context="{'default_partner_id':parent.partner_id}" groups="purchase.group_analytic_accounting"/>
                                     <field name="analytic_tag_ids" groups="purchase.group_analytic_accounting" widget="many2many_tags"/>
                                     <field name="product_qty"/>
                                     <field name="qty_received" invisible="not context.get('show_purchase', False)"/>
-                                    <field name="qty_invoiced" invisible="not context.get('show_purchase', False)"/>
+                                    <field name="qty_invoiced" invisible="1"/>
                                     <field name="product_uom" groups="product.group_uom" attrs="{'readonly': [('state', 'in', ('purchase', 'done', 'cancel'))]}"/>
-                                    <field name="price_unit"/>
-                                    <field name="taxes_id" widget="many2many_tags" domain="[('type_tax_use','=','purchase')]" context="{'default_type_tax_use': 'purchase'}"/>
-                                    <field name="price_subtotal" widget="monetary"/>
+                                    <field name="price_unit" invisible="1"/>
+                                    <field name="taxes_id" widget="many2many_tags" domain="[('type_tax_use','=','purchase')]" context="{'default_type_tax_use': 'purchase'}" invisible="1"/>
+                                    <field name="price_subtotal" widget="monetary" invisible="1"/>
                                 </tree>
                                 <form string="Requisition Order Line">
                                     <sheet>
@@ -239,10 +239,10 @@
                                                     <span class="oe_inline">&#160;</span>
                                                     <field name="product_uom" groups="product.group_uom" class="oe_inline"/>
                                                 </div>
-                                                <field name="price_unit"/>
+                                                <field name="price_unit" invisible="1"/>
                                             </group>
                                             <group>
-                                                <field name="taxes_id" widget="many2many_tags" domain="[('type_tax_use', '=', 'purchase')]"/>
+                                                <field name="taxes_id" widget="many2many_tags" domain="[('type_tax_use', '=', 'purchase')]" invisible="1"/>
                                                 <field name="date_planned" widget="date"/>
                                                 <field name="account_analytic_id" colspan="2" groups="purchase.group_analytic_accounting"/>
                                                 <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
@@ -260,12 +260,12 @@
                                 </form>
                             </field>
                             <group class="oe_subtotal_footer oe_right">
-                                <field name="amount_untaxed" widget="monetary" options="{'currency_field': 'currency_id'}"/>
-                                <field name="amount_tax" widget="monetary" options="{'currency_field': 'currency_id'}"/>
-                                <div class="oe_subtotal_footer_separator oe_inline">
+                                <field name="amount_untaxed" widget="monetary" options="{'currency_field': 'currency_id'}" invisible="1"/>
+                                <field name="amount_tax" widget="monetary" options="{'currency_field': 'currency_id'}" invisible="1"/>
+                                <!-- <div class="oe_subtotal_footer_separator oe_inline">
                                     <label for="amount_total"/>
-                                </div>
-                                <field name="amount_total" nolabel="1" class="oe_subtotal_footer_separator" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                </div> -->
+                                <field name="amount_total" nolabel="1" class="oe_subtotal_footer_separator" widget="monetary" options="{'currency_field': 'currency_id'}" invisible="1"/>
                             </group>
                             <field name="notes" class="oe_inline" placeholder="An administrator can set up default Terms and conditions in your Company settings."/>
                             <div class="oe_clear"/>
@@ -382,9 +382,9 @@
                     <field name="partner_id"/>
                     <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
                     <field name="date_planned" invisible="context.get('quotation_only', False)"/>
-                    <field name="origin"/>
-                    <field name="amount_untaxed" sum="Total Untaxed amount" string="Untaxed" widget="monetary"/>
-                    <field name="amount_total" sum="Total amount" widget="monetary"/>
+                    <field name="origin" invisible="1"/>
+                    <field name="amount_untaxed" sum="Total Untaxed amount" string="Untaxed" widget="monetary" invisible="1"/>
+                    <field name="amount_total" sum="Total amount" widget="monetary" invisible="1"/>
                     <field name="currency_id" invisible="1"/>
                     <field name="state"/>
                     <field name="invoice_status" invisible="not context.get('show_purchase', False)"/>
