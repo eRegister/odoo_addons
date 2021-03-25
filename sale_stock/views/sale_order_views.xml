@@ -11,9 +11,9 @@
                     <button type="object"
                         name="action_view_delivery"
                         class="oe_stat_button"
-                        icon="fa-truck"
+                        icon="fa-pills"
                         attrs="{'invisible': [('delivery_count', '=', 0)]}" groups="base.group_user">
-                        <field name="delivery_count" widget="statinfo" string="Delivery"/>
+                        <field name="delivery_count" widget="statinfo" string="Dispense"/>
                     </button>
                 </xpath>
                 <xpath expr="//group[@name='sales_person']" position="before">
