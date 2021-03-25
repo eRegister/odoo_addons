@@ -301,13 +301,13 @@
                         <page name='internal_notes' string="Internal Notes">
                             <field name="comment" placeholder="Internal note..."/>
                         </page>
-                        <page name='sales_purchases' string="Sales &amp; Purchases">
+                        <page name='sales_purchases' string="Dispensing &amp; Requisitions">
                             <group name="container_row_2">
-                                <group string="Sale" name="sale">
+                                <group string="Dispense" name="sale">
                                     <field name="customer"/>
                                     <field name="user_id"/>
                                 </group>
-                                <group string="Purchase" name="purchase">
+                                <group string="Request" name="purchase">
                                     <field name="supplier"/>
                                 </group>
                                 <group string="Misc">
