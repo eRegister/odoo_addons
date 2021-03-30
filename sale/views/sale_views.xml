@@ -212,7 +212,7 @@
                                             <field name="qty_delivered_updateable" invisible="1"/>
                                             <field name="procurement_ids" invisible="1"/>
                                             <field name="price_subtotal" invisible="1"/>
-                                            <label for="product_uom_qty" string="Orderred Quantity"/>
+                                            <label for="product_uom_qty" string="Ordered Quantity"/>
                                             <div>
                                                 <field
                                                     context="{'partner_id':parent.partner_id, 'quantity':product_uom_qty, 'pricelist':parent.pricelist_id, 'uom':product_uom, 'uom_qty_change':True, 'company_id': parent.company_id}"
@@ -226,7 +226,7 @@
                                             </div>
                                             <label for="qty_invoiced" string="Invoiced Quantity" invisible="context.get('hide_sale')"/>
                                             <div invisible="context.get('hide_sale')">
-                                                <fild name="qty_invoiced" invisible="context.get('hide_sale')"/>
+                                                <field name="qty_invoiced" invisible="context.get('hide_sale')"/>
                                             </div>
                                             <field name="price_unit"/>
                                             <label for="discount" groups="sale.group_discount_per_so_line" invisible="1"/>
