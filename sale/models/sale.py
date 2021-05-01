@@ -112,8 +112,8 @@ class SaleOrder(models.Model):
     client_order_ref = fields.Char(string='Customer Reference', copy=False)
 
     state = fields.Selection([
-        ('draft', 'Quotation'),
-        ('sent', 'Quotation Sent'),
+        ('draft', 'Prescription'),
+        ('sent', 'Prescription Sent'),
         ('sale', 'Sales Order'),
         ('done', 'Locked'),
         ('cancel', 'Cancelled'),
