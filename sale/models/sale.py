@@ -114,7 +114,7 @@ class SaleOrder(models.Model):
     state = fields.Selection([
         ('draft', 'Prescription'),
         ('sent', 'Prescription Sent'),
-        ('sale', 'Sales Order'),
+        ('sale', 'Dispensing Order'),
         ('done', 'Locked'),
         ('cancel', 'Cancelled'),
         ], string='Status', readonly=True, copy=False, index=True, track_visibility='onchange', default='draft')
